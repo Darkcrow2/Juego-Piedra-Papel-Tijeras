@@ -10,34 +10,34 @@ while True:
     opcionesUsuario = input("Elige entre piedra, papel, tijeras o salir: ")
     opcionesComputadora = random.choice(opciones)
 
-    if opcionesUsuario == "salir":
+    if (opcionesUsuario.lower() == "salir".lower()):
         print("JUEGO FINALIZADO")
         break;
-    elif opcionesUsuario == "piedra":
-        if opcionesComputadora == "piedra":
+    elif (opcionesUsuario.lower() == "piedra".lower()):
+        if (opcionesComputadora.lower() == "piedra".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nJuego empatado\n")
-        elif opcionesComputadora == "papel":
+        elif (opcionesComputadora.lower() == "papel".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nComputadora gana\n")
             puntosComputadora = puntosComputadora + 1
-        elif opcionesComputadora == "tijeras":
+        elif (opcionesComputadora.lower() == "tijeras".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nUsuario gana\n")
             puntosUsuario = puntosUsuario + 1
-    elif opcionesUsuario == "papel":
-        if opcionesComputadora == "papel":
+    elif (opcionesUsuario.lower() == "papel".lower()):
+        if (opcionesComputadora.lower() == "papel".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nJuego empatado\n")
-        elif opcionesComputadora == "tijeras":
+        elif (opcionesComputadora.lower() == "tijeras".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nComputadora gana\n")
             puntosComputadora = puntosComputadora + 1
-        elif opcionesComputadora == "piedra":
+        elif (opcionesComputadora.lower() == "piedra".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nUsuario gana\n")
             puntosUsuario = puntosUsuario + 1
-    elif opcionesUsuario == "tijeras":
-        if opcionesComputadora == "tijeras":
+    elif (opcionesUsuario.lower() == "tijeras".lower()):
+        if (opcionesComputadora.lower() == "tijeras".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nJuego empatado\n")
-        elif opcionesComputadora == "piedra":
+        elif (opcionesComputadora.lower() == "piedra".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nComputadora gana\n")
             puntosComputadora = puntosComputadora + 1
-        elif opcionesComputadora == "papel":
+        elif (opcionesComputadora.lower() == "papel".lower()):
             print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nUsuario gana\n")
             puntosUsuario = puntosUsuario + 1
 
