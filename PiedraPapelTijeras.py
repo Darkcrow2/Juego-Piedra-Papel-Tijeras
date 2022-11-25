@@ -40,10 +40,10 @@ while True:
             puntosUsuario = puntosUsuario + 1
 
     if(puntosUsuario == 5):
-        print("GANASTE EL DUELO CONTRA LA COMPUTADORA\n")
+        print("GANASTE LA BATALLA CONTRA LA COMPUTADORA\n")
         break;
     elif(puntosComputadora == 5):
-        print("PERDISTE EL DUELO CONTRA LA COMPUTADORA\n")
+        print("PERDISTE LA BATALLA CONTRA LA COMPUTADORA\n")
         break;
     else:
         print("El puntaje es", "\nUSUARIO: ", puntosUsuario, "\nCOMPUTADORA: ", puntosComputadora, "\n")
