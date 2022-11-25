@@ -3,7 +3,7 @@ import random
 puntosUsuario = 0
 puntosComputadora = 0
 
-print("BIENVENIDO AL JUEGO DE PIEDRA, PAPEL O TIJERAS\n") #Bienvenida
+print("BIENVENIDO AL JUEGO DE PIEDRA, PAPEL O TIJERAS\n") #Bienvenida del juego
 
 while True:
     opciones = ["piedra", "papel", "tijeras"]
