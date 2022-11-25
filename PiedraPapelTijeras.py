@@ -3,6 +3,8 @@ import random
 puntosUsuario = 0
 puntosComputadora = 0
 
+print("BIENVENIDO AL JUEGO DE PIEDRA, PAPEL O TIJERAS\n")
+
 while True:
     opciones = ["piedra", "papel", "tijeras"]
     opcionesUsuario = input("Elige entre piedra, papel, tijeras o salir: ")
