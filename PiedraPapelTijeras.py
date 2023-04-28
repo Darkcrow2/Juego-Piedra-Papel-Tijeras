@@ -56,5 +56,3 @@ class JuegoPiedraPapelTijeras:
                 print(f"EL PUNTAJE ES \nUsuario: {self.puntosUsuario} \nComputadora: {self.puntosComputadora} \n")
 
 JuegoPiedraPapelTijeras().jugar()
-
-
