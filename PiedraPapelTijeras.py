@@ -1,53 +1,60 @@
 import random
 
-puntosUsuario = 0
-puntosComputadora = 0
+class JuegoPiedraPapelTijeras:
+    def __init__(self):
+        self.puntosUsuario = 0
+        self.puntosComputadora = 0
 
-print("BIENVENIDO AL JUEGO DE PIEDRA, PAPEL O TIJERAS\n") #Bienvenida del juego
+        print("BIENVENIDO AL JUEGO DE PIEDRA, PAPEL O TIJERAS\n") #Bienvenida del juego
 
-while True:
-    opciones = ["piedra", "papel", "tijeras"]
-    opcionesUsuario = input("Elige entre piedra, papel, tijeras o salir: ")
-    opcionesComputadora = random.choice(opciones)
+    def jugar(self):
 
-    if (opcionesUsuario.lower() == "salir".lower()):
-        print("JUEGO FINALIZADO")
-        break;
-    elif (opcionesUsuario.lower() == "piedra".lower()):
-        if (opcionesComputadora.lower() == "piedra".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nJuego empatado\n")
-        elif (opcionesComputadora.lower() == "papel".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nComputadora gana\n")
-            puntosComputadora = puntosComputadora + 1
-        elif (opcionesComputadora.lower() == "tijeras".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nUsuario gana\n")
-            puntosUsuario = puntosUsuario + 1
-    elif (opcionesUsuario.lower() == "papel".lower()):
-        if (opcionesComputadora.lower() == "papel".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nJuego empatado\n")
-        elif (opcionesComputadora.lower() == "tijeras".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nComputadora gana\n")
-            puntosComputadora = puntosComputadora + 1
-        elif (opcionesComputadora.lower() == "piedra".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nUsuario gana\n")
-            puntosUsuario = puntosUsuario + 1
-    elif (opcionesUsuario.lower() == "tijeras".lower()):
-        if (opcionesComputadora.lower() == "tijeras".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nJuego empatado\n")
-        elif (opcionesComputadora.lower() == "piedra".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nComputadora gana\n")
-            puntosComputadora = puntosComputadora + 1
-        elif (opcionesComputadora.lower() == "papel".lower()):
-            print("Elegiste: ", opcionesUsuario, "\nLa computadora eligio: ", opcionesComputadora, "\nUsuario gana\n")
-            puntosUsuario = puntosUsuario + 1
+        while True:
+            opciones = ["piedra", "papel", "tijeras", "salir"]
+            opcionesUsuario = input(f"Elige entre {opciones[0]}, {opciones[1]}, {opciones[2]} y {opciones[3]}: ")
+            opcionesComputadora = random.choice(opciones)
 
-    if(puntosUsuario == 5):
-        print("GANASTE LA BATALLA CONTRA LA COMPUTADORA\n")
-        break;
-    elif(puntosComputadora == 5):
-        print("PERDISTE LA BATALLA CONTRA LA COMPUTADORA\n")
-        break;
-    else:
-        print("El puntaje es", "\nUSUARIO: ", puntosUsuario, "\nCOMPUTADORA: ", puntosComputadora, "\n")
+            if (opcionesUsuario.lower() == opciones[3].lower()):
+                print("\nJUEGO FINALIZADO")
+                print(f"EL PUNTAJE ES \nUsuario: {self.puntosUsuario} \nComputadora: {self.puntosComputadora} \n")
+                break;
+            elif (opcionesUsuario.lower() == opciones[0].lower()):
+                if (opcionesComputadora.lower() == opciones[0].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nJuego empatado\n")
+                elif (opcionesComputadora.lower() == opciones[1].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nComputadora gana\n")
+                    self.puntosComputadora = self.puntosComputadora + 1
+                elif(opcionesComputadora.lower() == opciones[2].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nUsuario gana\n")
+                    self.puntosUsuario = self.puntosUsuario + 1
+            elif (opcionesUsuario.lower() == opciones[1].lower()):
+                if (opcionesComputadora.lower() == opciones[1].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nJuego empatado\n")
+                elif (opcionesComputadora.lower() == opciones[2].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nComputadora gana\n")
+                    self.puntosComputadora = self.puntosComputadora + 1
+                elif (opcionesComputadora.lower() == opciones[0].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nUsuario gana\n")
+                    self.puntosUsuario = self.puntosUsuario + 1
+            elif (opcionesUsuario.lower() == opciones[2].lower()):
+                if (opcionesComputadora.lower() == opciones[2].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nJuego empatado\n")
+                elif (opcionesComputadora.lower() == opciones[0].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nComputadora gana\n")
+                    self.puntosComputadora = self.puntosComputadora + 1
+                elif (opcionesComputadora.lower() == opciones[1].lower()):
+                    print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nUsuario gana\n")
+                    self.puntosUsuario = self.puntosUsuario + 1
+
+            if(self.puntosUsuario == 5):
+                print("GANASTE LA BATALLA CONTRA LA COMPUTADORA\n")
+                break;
+            elif(self.puntosComputadora == 5):
+                print("PERDISTE LA BATALLA CONTRA LA COMPUTADORA\n")
+                break;
+            else:
+                print(f"EL PUNTAJE ES \nUsuario: {self.puntosUsuario} \nComputadora: {self.puntosComputadora} \n")
+
+JuegoPiedraPapelTijeras().jugar()
 
 
