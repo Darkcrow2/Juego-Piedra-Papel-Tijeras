@@ -10,16 +10,16 @@ class JuegoPiedraPapelTijeras:
     def jugar(self):
 
         while True:
-            opciones = ["piedra", "papel", "tijeras"]
-            opcionSalir = "salir"
-            opcionesUsuario = input(f"Elige entre {opciones[0].upper()}, {opciones[1].upper()}, {opciones[2].upper()} y {opcionSalir.upper()}: ").upper()
-            opcionesComputadora = random.choice(opciones).upper()
+            opciones = ["PIEDRA", "PAPEL", "TIJERAS"]
+            opcionSalir = "SALIR"
+            opcionesUsuario = input(f"Elige entre {opciones[0]}, {opciones[1]}, {opciones[2]} y {opcionSalir}: ").upper()
+            opcionesComputadora = random.choice(opciones)
 
-            if (opcionesUsuario.lower() == opcionSalir):
+            if (opcionesUsuario == opcionSalir):
                 print("\nJUEGO FINALIZADO")
                 print(f"EL PUNTAJE ES: \nUsuario: {self.puntosUsuario} \nComputadora: {self.puntosComputadora} \n")
                 break;
-            elif (opcionesUsuario.lower() == opciones[0]):
+            elif (opcionesUsuario == opciones[0]):
                 match opcionesComputadora.lower():
                     case "piedra":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nJuego empatado\n")
@@ -29,7 +29,7 @@ class JuegoPiedraPapelTijeras:
                     case "tijeras":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nUsuario gana\n")
                         self.puntosUsuario = self.puntosUsuario + 1
-            elif (opcionesUsuario.lower() == opciones[1]):
+            elif (opcionesUsuario == opciones[1]):
                 match opcionesComputadora.lower():
                     case "piedra":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nUsuario gana\n")
@@ -39,7 +39,7 @@ class JuegoPiedraPapelTijeras:
                     case "tijeras":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nComputadora gana\n")
                         self.puntosComputadora = self.puntosComputadora + 1
-            elif (opcionesUsuario.lower() == opciones[2]):
+            elif (opcionesUsuario == opciones[2]):
                 match opcionesComputadora.lower():
                     case "piedra":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nComputadora gana\n")
