@@ -9,7 +9,7 @@ class JuegoPiedraPapelTijeras:
 
     def jugar(self):
 
-        print("BIENVENIDO AL JUEGO DE PIEDRA, PAPEL O TIJERAS\n") #Bienvenida del juego
+        print("BIENVENIDO AL JUEGO DE PIEDRA, PAPEL O TIJERAS\n")
 
         while True:
             
