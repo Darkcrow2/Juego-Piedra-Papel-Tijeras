@@ -4,8 +4,7 @@ class JuegoPiedraPapelTijeras:
     def __init__(self):
         self.puntosUsuario = 0
         self.puntosComputadora = 0
-        self.opciones = ["PIEDRA", "PAPEL", "TIJERAS"]
-        self.opcionSalir = "SALIR"
+        self.opciones = ["PIEDRA", "PAPEL", "TIJERAS", "SALIR"]
 
     def jugar(self):
 
@@ -13,10 +12,10 @@ class JuegoPiedraPapelTijeras:
 
         while True:
             
-            opcionesUsuario = input(f"Elige entre {self.opciones[0]}, {self.opciones[1]}, {self.opciones[2]} y {self.opcionSalir}: ").upper()
-            opcionesComputadora = random.choice(self.opciones)
+            opcionesUsuario = input(f"Elige entre {self.opciones[0]}, {self.opciones[1]}, {self.opciones[2]} y {self.opciones[3]}: ").upper()
+            opcionesComputadora = self.opciones[random.randint(0, 2)]
 
-            if (opcionesUsuario == self.opcionSalir):
+            if (opcionesUsuario == self.opciones[3]):
                 print("\nJUEGO FINALIZADO")
                 print(f"EL PUNTAJE ES: \nUsuario: {self.puntosUsuario} \nComputadora: {self.puntosComputadora} \n")
                 break;
