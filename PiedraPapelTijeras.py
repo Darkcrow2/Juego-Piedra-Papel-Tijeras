@@ -65,6 +65,9 @@ class JuegoPiedraPapelTijeras:
                 if(self.ganador):
                     break
 
+            else:
+                print("Por favor, seleccione una opcion valida\n")
+
     def puntaje(self, puntosUsuario, puntosComputadora):
         if(puntosUsuario == 5):
             print("GANASTE LA BATALLA CONTRA LA COMPUTADORA\n")
