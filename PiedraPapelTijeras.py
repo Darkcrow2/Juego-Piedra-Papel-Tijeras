@@ -4,6 +4,7 @@ class JuegoPiedraPapelTijeras:
     def __init__(self):
         self.puntosUsuario = 0
         self.puntosComputadora = 0
+        self.ganador = False
         self.opciones = ["PIEDRA", "PAPEL", "TIJERAS", "SALIR"]
 
     def jugar(self):
@@ -29,6 +30,11 @@ class JuegoPiedraPapelTijeras:
                     case "tijeras":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nUsuario gana\n")
                         self.puntosUsuario = self.puntosUsuario + 1
+
+                self.ganador = self.puntaje(self.puntosUsuario, self.puntosComputadora)
+                if(self.ganador):
+                    break
+
             elif (opcionesUsuario == self.opciones[1]):
                 match opcionesComputadora.lower():
                     case "piedra":
@@ -39,6 +45,11 @@ class JuegoPiedraPapelTijeras:
                     case "tijeras":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nComputadora gana\n")
                         self.puntosComputadora = self.puntosComputadora + 1
+
+                self.ganador = self.puntaje(self.puntosUsuario, self.puntosComputadora)
+                if(self.ganador):
+                    break
+
             elif (opcionesUsuario == self.opciones[2]):
                 match opcionesComputadora.lower():
                     case "piedra":
@@ -50,13 +61,19 @@ class JuegoPiedraPapelTijeras:
                     case "tijeras":
                         print(f"\nElegiste: {opcionesUsuario} \nLa computadora eligio: {opcionesComputadora} \nJuego empatado\n")
 
-            if(self.puntosUsuario == 5):
-                print("GANASTE LA BATALLA CONTRA LA COMPUTADORA\n")
-                break;
-            elif(self.puntosComputadora == 5):
-                print("PERDISTE LA BATALLA CONTRA LA COMPUTADORA\n")
-                break;
-            else:
-                print(f"EL PUNTAJE ES: \nUsuario: {self.puntosUsuario} \nComputadora: {self.puntosComputadora} \n")
+                self.ganador = self.puntaje(self.puntosUsuario, self.puntosComputadora)
+                if(self.ganador):
+                    break
+
+    def puntaje(self, puntosUsuario, puntosComputadora):
+        if(puntosUsuario == 5):
+            print("GANASTE LA BATALLA CONTRA LA COMPUTADORA\n")
+            return True
+        elif(puntosComputadora == 5):
+            print("PERDISTE LA BATALLA CONTRA LA COMPUTADORA\n")
+            return True
+        else:
+            print(f"EL PUNTAJE ES: \nUsuario: {self.puntosUsuario} \nComputadora: {self.puntosComputadora} \n")
+            return False
 
 JuegoPiedraPapelTijeras().jugar()
