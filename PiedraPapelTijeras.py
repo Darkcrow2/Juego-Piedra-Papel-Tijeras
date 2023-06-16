@@ -29,7 +29,8 @@ class JuegoPiedraPapelTijeras:
 
             self.ganador = self.puntaje(self.puntosUsuario, self.puntosComputadora)
             if(self.ganador != True):
-                self.jugar()
+                return self.jugar()
+
         elif (opcionesUsuario == self.opciones[1]):
             match opcionesComputadora.lower():
                 case "piedra":
@@ -43,7 +44,8 @@ class JuegoPiedraPapelTijeras:
 
             self.ganador = self.puntaje(self.puntosUsuario, self.puntosComputadora)
             if(self.ganador != True):
-                self.jugar()
+                return self.jugar()
+
         elif (opcionesUsuario == self.opciones[2]):
             match opcionesComputadora.lower():
                 case "piedra":
@@ -57,11 +59,11 @@ class JuegoPiedraPapelTijeras:
 
             self.ganador = self.puntaje(self.puntosUsuario, self.puntosComputadora)
             if(self.ganador != True):
-                self.jugar()
+                return self.jugar()
 
         else:
             print("Por favor, seleccione una opcion valida\n")
-            self.jugar()
+            return self.jugar()
 
     def puntaje(self, puntosUsuario, puntosComputadora):
         if(puntosUsuario == 5):
